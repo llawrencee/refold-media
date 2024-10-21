@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <!-- Import Favicon -->
+    
+        <!-- Import Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Lora&display=swap" rel="stylesheet">
+
+        <!-- Import Styles -->
+        <link rel="stylesheet" href="/styles/style.css">
+    
+        <!-- Import Libraries -->
+        <script src="/reveal.js"></script>
+    
+        <title>Refold Media - Landing Page</title>
+    </head>
+<body>
+    <header class="main-navigation">
+        <div class="wrapper">
+            <a href="/" class="navigation-logo">
+                <img src="/images/logo.png" alt="">
+            </a>
+            <ul class="navigation-links">
+                <li class="navigation-link active"><a href="#home">Home</a></li>
+                <li class="navigation-link"><a href="#about-us">About Us</a></li>
+                <li class="navigation-link"><a href="#services">Services</a></li>
+                <li class="navigation-link"><a href="#contacts">Contacts</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero-content" id="home">
+        <h1 class="hero-title"><span class="accented">Re</span>-define your images and videos</h1>
+        <a href="#contacts" class="hero-cta">Contact Us</a>
+    </section>
+
+    <section class="about-us">
+        <div id="about-us"></div>
+        <h2>About Us</h2>
+        <div class="wrapper">
+            <div class="content-wrapper">
+                <h3 class="content-title">What exactly do we offer?</h3>
+                <ul class="skill-list">
+                    <li>Recoloring</li>
+                    <li>Image Restoration</li>
+                    <li>Object Removal</li>
+                    <li>Subject Removal</li>
+                    <li>Video Editing</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="/images/about-us-image.jpg" alt="">
+                <div class="accent-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after">
+        <div id="services"></div>
+        <h2 class="section-title">Our Services</h2>
+        <h3 class="showcase-title">Recolor #1</h3>
+        <div class="image-container">
+            <div class="image-mask" style="--image: url('/images/recolor-1-after.jpg');"></div>
+            <img src="/images/recolor-1-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h3 class="showcase-title">Recolor #2</h3>
+        <div class="image-container" style="--max-width: 500px">
+            <div class="image-mask" style="--image: url('/images/recolor-2-after.jpg');"></div>
+            <img src="/images/recolor-2-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h3 class="showcase-title">Restoration #1</h3>
+        <div class="image-container">
+            <div class="image-mask" style="--image: url('/images/restoration-1-after.jpg');"></div>
+            <img src="/images/restoration-1-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h3 class="showcase-title">Restoration #2</h3>
+        <div class="image-container">
+            <div class="image-mask" style="--image: url('/images/restoration-2-after.jpg');"></div>
+            <img src="/images/restoration-2-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h3 class="showcase-title">Object Removal</h3>
+        <div class="image-container">
+            <div class="image-mask" style="--image: url('/images/object-removal-after.jpg');"></div>
+            <img src="/images/object-removal-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h3 class="showcase-title">Subject Removal #1</h3>
+        <div class="image-container">
+            <div class="image-mask" style="--image: url('/images/subject-removal-1-after.jpg');"></div>
+            <img src="/images/subject-removal-1-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="before-after">
+        <h3 class="showcase-title">Subject Removal #2</h3>
+        <div class="image-container" style="--max-width: 500px">
+            <div class="image-mask" style="--image: url('/images/subject-removal-2-after.jpg');"></div>
+            <img src="/images/subject-removal-2-before.jpg" alt="Black and white picture of a girl.">
+        </div>
+    </section>
+
+    <section class="contacts">
+        <div id="contacts"></div>
+        <div class="wrapper">
+            <div class="text-wrapper">
+                <h3 class="section-title">Contact Us</h3>
+                <p>Have a question, need assistance, or simply want to share your experience with our platform? We'd love to hear from you!</p>
+            </div>
+            <div class="cta-wrapper">
+                <div class="tel-number">
+                    <a href="tel:+639690488856">Call Us.</a>
+                </div>
+                <div class="fb-account">
+                    <a href="https://www.facebook.com/bienaouien.miranda/" target="_blank" rel="noopener noreferrer">Bien Aouien Miranda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 1rem; background-color: rgba(72, 72, 72, 0.215);">
+        <p>@ Refold Media 2023.</p>
+    </footer>
+
+    <script src="link.js"></script>
+    <script>
+        const allBeforeAfter_container = document.querySelectorAll('.image-container')
+        const allBeforeAfter_mask = document.querySelectorAll('.image-mask')
+
+        for (let i = 0; i < allBeforeAfter_container.length; i++) {
+            let beforeAfterReveal = new ImageReveal(allBeforeAfter_container[i], allBeforeAfter_mask[i])
+        }
+    </script>
+</body>
+</html>

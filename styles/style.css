@@ -1,0 +1,337 @@
+* {
+    --primary-accent: #FF5757;
+    --primary-dark: #171717;
+    --primary-light: #e6e6e6;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: var(--primary-light);
+}
+
+body::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: var(--primary-light);
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: var(--primary-accent);
+}
+
+body {
+    font-family: 'Afacad', sans-serif;
+    color: var(--primary-light);
+    background-color: var(--primary-dark);
+}
+
+.main-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 11.5vh;
+    display: flex;
+    justify-content: center;
+    background-color: #17171784;
+    backdrop-filter: blur(1rem);
+    z-index: 1000;
+}
+
+.main-navigation .wrapper {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-logo {
+    width: 60px;
+    height: 60px;
+}
+
+.navigation-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.navigation-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navigation-link a {
+    font-size: 1.15rem;
+    color: var(--primary-light);
+    text-decoration: none;
+    font-family: 'Afacad', sans-serif;
+    transition: color 300ms ease;
+}
+
+.navigation-link.active a {
+    color: var(--primary-accent);
+}
+
+.hero-content {
+    height: 75vh;
+    background-image: url("/images/highlight.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    margin-inline: auto;
+    width: fit-content;
+    position: relative;
+    margin-top: 7.5rem;
+    color: var(--primary-light);
+    font-family: 'Lora', sans-serif;
+    font-style: italic;
+    font-size: 3rem;
+    isolation: isolate;
+}
+
+.hero-title::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: var(--primary-dark);
+    filter: blur(3rem);
+    z-index: -10;
+}
+
+.accented {
+    color: var(--primary-accent);
+}
+
+.hero-cta {
+    margin-top: 5rem;
+    color: var(--primary-accent);
+    text-decoration: none;
+    padding: 0.35rem 1.5rem;
+    border: 2px solid var(--primary-accent);
+    background-color: var(--primary-dark);
+    border-radius: 15px;
+    font-size: 1.15rem;
+    font-family: 'Afacad', sans-serif;
+    transition: background-color 300ms ease, color 300ms ease, translate 300ms ease;
+}
+
+.hero-cta:hover {
+    color: var(--primary-dark);
+    background-color: var(--primary-accent);
+    translate: 0 -2.5px;
+}
+
+.about-us {
+    width: 100%;
+    height: 45vh;
+    padding-block: 1.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+#about-us, #contacts {
+    position: absolute;
+    margin-top: -10rem;
+}
+
+.about-us > h2 {
+    font-size: 3rem;
+    text-align: center;
+    /* margin-bottom: 2rem; */
+}
+
+.about-us .wrapper {
+    width: 75%;
+    height: 100%;
+    margin-inline: auto;
+    display: flex;
+}
+
+.about-us .wrapper > div {
+    width: 50%;
+    height: 100%;
+}
+
+.about-us .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    font-size: 1.125rem;
+}
+
+.about-us .content-title {
+    font-size: 2rem;
+}
+
+.about-us .skill-list {
+    list-style: none;
+}
+
+.about-us .skill-list li {
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+    translate: 2rem;
+}
+
+.about-us .skill-list li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--primary-accent); /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1.125em; /* Also needed for space (tweak if needed) */
+    margin-left: -0.75em; /* Also needed for space (tweak if needed) */
+}
+
+.about-us .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.about-us .image-wrapper img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16/9;
+    position: relative;
+    border: 3px solid var(--primary-accent);
+    transition: transform 300ms ease;
+}
+
+.about-us .image-wrapper img:hover {
+    transform: translate(-2.5px, -2.5px);
+}
+
+.about-us .image-wrapper img:hover + .accent-overlay {
+    --offset: 10px;
+}
+
+.accent-overlay {
+    --offset: 7.5px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16/9;
+    background-color: var(--primary-accent);
+    transform: translate(calc(-50% + var(--offset)), calc(-50% + var(--offset)));
+    transition: transform 300ms ease;
+    z-index: -10;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+#services {
+    position: absolute;
+    margin-top: -7.5rem;
+}
+
+.before-after {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 3rem;
+    color: var(--primary-light);
+    position: relative;
+}
+
+.before-after .showcase-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.before-after .image-container {
+    --max-width: 350px;
+    max-width: var(--max-width);
+    position: relative;
+}
+
+.before-after .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.before-after .image-mask {
+    --_x: 10%;
+    --_y: 10%;
+    --_radius: 25%;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: var(--image);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+
+    clip-path: circle(var(--_radius) at var(--_x) var(--_y));
+
+    transition: opacity 450ms ease-in-out;
+}
+
+.contacts {
+    display: flex;
+    position: relative;
+    padding-bottom: 3rem;
+}
+
+.contacts .wrapper {
+    width: 75%;
+    margin-inline: auto;
+    display: flex;
+}
+
+.contacts .wrapper > div {
+    width: 50%;
+}
+
+.contacts .wrapper .text-wrapper {
+    padding: 2rem 5rem;
+    font-size: 1.25rem;
+}
+
+.contacts .wrapper .cta-wrapper {
+    padding: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts .wrapper .cta-wrapper a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+    transition: scale 300ms ease, translate 300ms ease;
+}
+
+.contacts .wrapper .cta-wrapper a:hover {
+    scale: 1.1;
+    translate: 0px -5px;
+}
